@@ -36,8 +36,10 @@ fb2$STANDARD_Method_of_Solicitation <- fb2$STANDARD_Method_of_Solicitation %>% r
 
 
 fb2$STANDARD_Method_of_Solicitation <- dplyr::recode(fb2$STANDARD_Method_of_Solicitation, "YetiRaffle" = "Special Events",
-"Grant Applications-Foundations"="Grant Applications - Foundations", "Grant Applications-Other"= "Grant Applications - Other", 
+"Grant Applications-Foundations"="Grant Applications - Foundations", "Grant Applications- Other"= "Grant Applications - Other", 
 "Grant Applications- Corporationa" = "Grant Applications - Corporations")
 
 fb2$STANDARD_Source_of_Donation <- dplyr::recode(fb2$STANDARD_Source_of_Donation, "Company"="Corporation",
 "Corporations and Businesses"="Corporation", "Church"="Organization")
+
+write.xlsx(fb2, file = "FPI_Data_FHFB_Processed.xlsx") 
